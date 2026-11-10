@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MLQ-5X Leadership Assessment & Diagnostic Platform</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Font: Plus Jakarta Sans -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0284c7',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* Print Custom Styles */
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-only {
+        display: block !important;
+      }
+      .tab-content {
+        display: block !important;
+      }
+      #tab-teori, #tab-kuesioner {
+        display: none !important;
+      }
+      #tab-analisis {
+        display: block !important;
+      }
+      .shadow-sm, .shadow-md, .shadow-lg, .shadow-xl {
+        box-shadow: none !important;
+        border: 1px solid #cbd5e1 !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-100 font-sans text-slate-800 min-h-screen flex flex-col antialiased selection:bg-sky-500 selection:text-white">
+
+  <!-- 1. STICKY TOP HEADER & NAVIGATION -->
+  <header class="sticky top-0 z-50 bg-slate-900 text-white shadow-xl border-b border-slate-800 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between py-3.5 gap-3">
+        <!-- Logo & Title -->
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-sky-500/20">
+            <i class="fa-solid fa-chart-pie text-lg"></i>
+          </div>
+          <div>
+            <h1 class="text-lg sm:text-xl font-bold tracking-tight text-white flex items-center gap-2">
+              MLQ-5X Leadership Assessment
+              <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-sky-500/20 text-sky-300 border border-sky-400/30">FRLM Platform</span>
+            </h1>
+            <p class="text-xs text-slate-400 font-medium">Full Range Leadership Model (Bass & Avolio)</p>
+          </div>
+        </div>
+
+        <!-- Tab Navigation Buttons -->
+        <nav class="flex items-center bg-slate-800/80 p-1.5 rounded-xl border border-slate-700/60 text-xs sm:text-sm font-semibold">
+          <button id="btn-tab-teori" onclick="switchTab('teori')" class="tab-btn flex-1 md:flex-none px-4 py-2 rounded-lg transition-all duration-200 flex items-center justify-center space-x-2 text-sky-400 bg-slate-700/80 shadow-sm border border-slate-600/50">
+            <i class="fa-solid fa-book-open"></i>
+            <span>1. Teori MLQ-5X</span>
+          </button>
+
+          <button id="btn-tab-kuesioner" onclick="switchTab('kuesioner')" class="tab-btn flex-1 md:flex-none px-4 py-2 rounded-lg transition-all duration-200 flex items-center justify-center space-x-2 text-slate-400 hover:text-white">
+            <i class="fa-solid fa-list-check"></i>
+            <span>2. Kuesioner MLQ</span>
+          </button>
+
+          <button id="btn-tab-analisis" onclick="switchTab('analisis')" class="tab-btn flex-1 md:flex-none px-4 py-2 rounded-lg transition-all duration-200 flex items-center justify-center space-x-2 text-slate-400 hover:text-white">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>3. Hitung & Analisis</span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+
+    <!-- ================================================================================= -->
+    <!-- TAB 1: TEORI MLQ-5X -->
+    <!-- ================================================================================= -->
+    <section id="tab-teori" class="tab-content space-y-8 animate-fade-in">
+      
+      <!-- Hero Banner -->
+      <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-2xl p-6 sm:p-10 text-white shadow-xl relative overflow-hidden border border-slate-800">
+        <div class="absolute -right-10 -bottom-10 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="max-w-3xl space-y-3 relative z-10">
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">
+            <i class="fa-solid fa-microscope text-xs"></i> Framework Ilmiah Standar Global
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">Full Range Leadership Model (FRLM)</h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Multifactor Leadership Questionnaire (MLQ-5X) dirancang oleh <strong class="text-white font-semibold">Bernard M. Bass</strong> dan <strong class="text-white font-semibold">Bruce J. Avolio</strong> sebagai instrumen psikometrik standar dunia untuk mengukur spektrum perilaku kepemimpinan mulai dari pasif (<em>avoidant</em>), transaksional (pertukaran imbalan), hingga transformasional (menginspirasi dan menggerakkan).
+          </p>
+        </div>
+      </div>
+
+      <!-- Conceptual Explanation Narrative (> 600 Words) -->
+      <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-6 text-slate-700 leading-relaxed text-sm sm:text-base">
+        <div class="border-b border-slate-200 pb-4">
+          <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2.5">
+            <i class="fa-solid fa-graduation-cap text-sky-600"></i> Landasan Teori & Struktur Spektrum Kepemimpinan
+          </h3>
+        </div>
+
+        <p>
+          Model Kepemimpinan Rentang Luas atau <strong>Full Range Leadership Model (FRLM)</strong> merupakan kerangka kerja teoretis komprehensif yang dikembangkan untuk memetakan bagaimana seorang pemimpin mempengaruhi pengikutnya. Model ini membedakan perilaku kepemimpinan tidak sekadar sebagai dikotomi "baik" atau "buruk", melainkan sebagai kontinum bergradasi berdasarkan dua aspek utama: <strong>tingkat keaktifan (Active vs. Passive)</strong> dan <strong>tingkat efektivitas (Effective vs. Ineffective)</strong>.
+        </p>
+
+        <p>
+          Dalam organisasi modern, efektivitas operasional jangka panjang membutuhkan keseimbangan perilaku yang tepat. Bass dan Avolio menemukan bahwa pemimpin terbaik tidak hanya mengandalkan kontrol dan instruksi rutin (transaksional), tetapi secara konsisten menampilkan perilaku transformasional yang menginspirasi, memberdayakan, serta membentuk ikatan emosional dan integritas moral dengan anggota tim.
+        </p>
+
+        <!-- Diagram Visual 1: Full Range Leadership Spectrum -->
+        <div class="my-8 bg-slate-50 rounded-2xl p-6 border border-slate-200 space-y-4">
+          <h4 class="text-sm font-bold uppercase tracking-wider text-slate-700 text-center flex items-center justify-center gap-2">
+            <i class="fa-solid fa-sliders text-sky-600"></i> Diagram 1: Spektrum Kontinum Full Range Leadership Model
+          </h4>
+          <div class="overflow-x-auto py-2">
+            <svg viewBox="0 0 800 220" class="w-full h-auto min-w-[650px] font-sans">
+              <!-- Grid background lines -->
+              <line x1="100" y1="180" x2="750" y2="180" stroke="#cbd5e1" stroke-width="2" />
+              <line x1="100" y1="40" x2="100" y2="180" stroke="#cbd5e1" stroke-width="2" />
+              
+              <!-- Axes Labels -->
+              <text x="55" y="115" font-size="11" font-weight="bold" fill="#64748b" transform="rotate(-90 55 115)">TINGKAT KEAKTIFAN (ACTIVE)</text>
+              <text x="380" y="210" font-size="11" font-weight="bold" fill="#64748b" text-anchor="middle">TINGKAT EFEKTIVITAS (EFFECTIVE)</text>
+
+              <!-- Passive/Avoidant Block -->
+              <rect x="120" y="130" width="180" height="40" rx="8" fill="#ef4444" fill-opacity="0.15" stroke="#ef4444" stroke-width="1.5" />
+              <text x="210" y="155" font-size="12" font-weight="bold" fill="#991b1b" text-anchor="middle">Passive / Avoidant</text>
+              <text x="210" y="185" font-size="10" fill="#dc2626" text-anchor="middle">(Laissez-Faire & MBE-P)</text>
+
+              <!-- Transactional Block -->
+              <rect x="340" y="85" width="200" height="45" rx="8" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-width="1.5" />
+              <text x="440" y="112" font-size="12" font-weight="bold" fill="#92400e" text-anchor="middle">Transactional Leadership</text>
+              <text x="440" y="142" font-size="10" fill="#d97706" text-anchor="middle">(CR & MBE-A)</text>
+
+              <!-- Transformational Block -->
+              <rect x="570" y="40" width="190" height="50" rx="8" fill="#0284c7" fill-opacity="0.15" stroke="#0284c7" stroke-width="2" />
+              <text x="665" y="68" font-size="13" font-weight="bold" fill="#075985" text-anchor="middle">Transformational</text>
+              <text x="665" y="100" font-size="10" fill="#0284c7" text-anchor="middle">(5 Is: IA, IB, IM, IS, IC)</text>
+
+              <!-- Trend Arrow Line -->
+              <path d="M 140 140 Q 380 110 720 50" fill="none" stroke="#0284c7" stroke-width="3" stroke-dasharray="6 4" marker-end="url(#arrowhead)" />
+              
+              <defs>
+                <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                  <polygon points="0 0, 8 4, 0 8" fill="#0284c7" />
+                </marker>
+              </defs>
+            </svg>
+          </div>
+          <p class="text-xs text-slate-500 text-center italic">
+            Gambar 1: Semakin bergeser kepemimpinan ke arah Transformasional, semakin tinggi efektivitas dan tingkat keaktifan pemimpin.
+          </p>
+        </div>
+
+        <h4 class="text-lg font-bold text-slate-900 pt-2">Tiga Gaya Utama FRLM</h4>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-2">
+          
+          <div class="bg-sky-50/60 rounded-xl p-5 border border-sky-200 space-y-2">
+            <div class="flex items-center space-x-2 text-sky-700 font-bold">
+              <i class="fa-solid fa-wand-magic-sparkles text-lg"></i>
+              <h5>1. Transformasional</h5>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Gaya proaktif yang menginspirasi tim untuk mengesampingkan kepentingan pribadi demi tujuan bersama. Pemimpin membimbing bawahan mencapai potensi maksimal melalui visi, inovasi, dan perhatian personal.
+            </p>
+          </div>
+
+          <div class="bg-amber-50/60 rounded-xl p-5 border border-amber-200 space-y-2">
+            <div class="flex items-center space-x-2 text-amber-700 font-bold">
+              <i class="fa-solid fa-handshake font-bold text-lg"></i>
+              <h5>2. Transaksional</h5>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Gaya yang berfokus pada pertukaran (transaksi) objektif. Pemimpin memperjelas target kerja (KPI), menetapkan kesepakatan imbalan (<em>reward</em>), serta melakukan koreksi bila terjadi penyimpangan standar.
+            </p>
+          </div>
+
+          <div class="bg-rose-50/60 rounded-xl p-5 border border-rose-200 space-y-2">
+            <div class="flex items-center space-x-2 text-rose-700 font-bold">
+              <i class="fa-solid fa-user-slash text-lg"></i>
+              <h5>3. Passive / Avoidant</h5>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Bentuk kepemimpinan paling tidak efektif yang ditandai oleh ketidakhadiran pemimpin saat dibutuhkan, menunda pembuatan keputusan penting, dan membiarkan masalah berlarut-larut.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Diagram Visual 2: Comparison Graphic -->
+        <div class="my-8 bg-slate-900 rounded-2xl p-6 text-white space-y-4 shadow-lg border border-slate-800">
+          <h4 class="text-sm font-bold uppercase tracking-wider text-sky-400 text-center flex items-center justify-center gap-2">
+            <i class="fa-solid fa-scale-balanced"></i> Diagram 2: Infografis Perbandingan Karakteristik Utama
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+            <!-- Left Side: Transformational -->
+            <div class="bg-slate-800/90 rounded-xl p-5 border border-sky-500/30 space-y-3">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-700">
+                <span class="font-extrabold text-sky-300 text-base">Kepemimpinan Transformasional</span>
+                <span class="text-xs px-2.5 py-1 rounded-full bg-sky-500/20 text-sky-300 font-semibold">Proaktif & Inspiring</span>
+              </div>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-slate-300">
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-circle-check text-sky-400 mt-1"></i>
+                  <span><strong>Fokus:</strong> Nilai-nilai, moralitas, visi jangka panjang, dan pertumbuhan talenta.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-circle-check text-sky-400 mt-1"></i>
+                  <span><strong>Motivasi:</strong> Intrinsik (kebanggaan, rasa memiliki, panggilan jiwa).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-circle-check text-sky-400 mt-1"></i>
+                  <span><strong>Dampak Tim:</strong> Mendorong usaha ekstra (<em>Extra Effort</em>) melampaui standar kerja rutin.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-circle-check text-sky-400 mt-1"></i>
+                  <span><strong>Gaya Inovasi:</strong> Mengajak tim meninjau kembali asumsi lama secara kritis.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Right Side: Transactional -->
+            <div class="bg-slate-800/90 rounded-xl p-5 border border-amber-500/30 space-y-3">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-700">
+                <span class="font-extrabold text-amber-300 text-base">Kepemimpinan Transaksional</span>
+                <span class="text-xs px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 font-semibold">Reaktif & Kontraktual</span>
+              </div>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-slate-300">
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-circle-check text-amber-400 mt-1"></i>
+                  <span><strong>Fokus:</strong> Pencapaian target KPI, kepatuhan prosedur operasional standar (SOP).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-circle-check text-amber-400 mt-1"></i>
+                  <span><strong>Motivasi:</strong> Ekstrinsik (insentif finansial, pujian, atau menghindari hukuman).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-circle-check text-amber-400 mt-1"></i>
+                  <span><strong>Dampak Tim:</strong> Memenuhi standar kinerja minimum yang telah disepakati.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-circle-check text-amber-400 mt-1"></i>
+                  <span><strong>Gaya Inovasi:</strong> Pemantauan ketat dan koreksi kesalahan setelah penyimpangan terjadi.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="text-lg font-bold text-slate-900 pt-2">Tabel Referensi Lengkap Framework MLQ-5X</h4>
+
+        <!-- Table 1: Breakdown 12 Dimensi -->
+        <div class="space-y-3">
+          <h5 class="font-bold text-slate-800 text-sm sm:text-base flex items-center gap-2">
+            <i class="fa-solid fa-table-cells text-sky-600"></i> Tabel 1: Matriks 12 Dimensi MLQ-5X
+          </h5>
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-left text-xs sm:text-sm border-collapse">
+              <thead class="bg-slate-900 text-white uppercase text-[11px] tracking-wider">
+                <tr>
+                  <th class="p-3">Kategori Gaya</th>
+                  <th class="p-3">Kode</th>
+                  <th class="p-3">Nama Dimensi MLQ-5X</th>
+                  <th class="p-3">Fokus Perilaku Utama</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white">
+                <tr class="hover:bg-slate-50">
+                  <td class="p-3 font-semibold text-sky-700" rowspan="5">Transformasional</td>
+                  <td class="p-3 font-bold">IA</td>
+                  <td class="p-3 font-semibold">Idealized Attributes</td>
+                  <td class="p-3">Karisma, integritas tinggi, dan membuat tim bangga dipimpin.</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="p-3 font-bold">IB</td>
+                  <td class="p-3 font-semibold">Idealized Behaviors</td>
+                  <td class="p-3">Menekankan nilai-nilai etika, kepercayaan moral, dan visi organisasi.</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="p-3 font-bold">IM</td>
+                  <td class="p-3 font-semibold">Inspirational Motivation</td>
+                  <td class="p-3">Bicara optimis tentang masa depan dan menetapkan standar tinggi.</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="p-3 font-bold">IS</td>
+                  <td class="p-3 font-semibold">Intellectual Stimulation</td>
+                  <td class="p-3">Mendorong inovasi, ide baru, dan meninjau kembali asumsi lama.</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="p-3 font-bold">IC</td>
+                  <td class="p-3 font-semibold">Individualized Consideration</td>
+                  <td class="p-3">Perhatian khusus 1-on-1, bimbingan, coaching, dan kepedulian talenta.</td>
+                </tr>
+
+                <tr class="hover:bg-slate-50 bg-slate-50/50">
+                  <td class="p-3 font-semibold text-amber-700" rowspan="2">Transaksional</td>
+                  <td class="p-3 font-bold">CR</td>
+                  <td class="p-3 font-semibold">Contingent Reward</td>
+                  <td class="p-3">Kejelasan kesepakatan imbalan atas pencapaian target kinerja.</td>
+                </tr>
+                <tr class="hover:bg-slate-50 bg-slate-50/50">
+                  <td class="p-3 font-bold">MBEA</td>
+                  <td class="p-3 font-semibold">Management by Exception (Active)</td>
+                  <td class="p-3">Memantau kesalahan secara proaktif untuk segera dikoreksi.</td>
+                </tr>
+
+                <tr class="hover:bg-slate-50">
+                  <td class="p-3 font-semibold text-rose-700" rowspan="2">Passive / Avoidant</td>
+                  <td class="p-3 font-bold">MBEP</td>
+                  <td class="p-3 font-semibold">Management by Exception (Passive)</td>
+                  <td class="p-3">Intervensi pasif hanya setelah masalah berlarut atau kronis.</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="p-3 font-bold">LF</td>
+                  <td class="p-3 font-semibold">Laissez-Faire</td>
+                  <td class="p-3">Pembiaran total, menghindari tanggung jawab, dan menunda keputusan.</td>
+                </tr>
+
+                <tr class="hover:bg-slate-50 bg-slate-50/50">
+                  <td class="p-3 font-semibold text-emerald-700" rowspan="3">Outcomes (Hasil)</td>
+                  <td class="p-3 font-bold">EE</td>
+                  <td class="p-3 font-semibold">Extra Effort</td>
+                  <td class="p-3">Dorongan motivasi tim untuk memberikan usaha melampaui target.</td>
+                </tr>
+                <tr class="hover:bg-slate-50 bg-slate-50/50">
+                  <td class="p-3 font-bold">EFF</td>
+                  <td class="p-3 font-semibold">Effectiveness</td>
+                  <td class="p-3">Efektivitas pemimpin memenuhi kebutuhan kerja dan target unit.</td>
+                </tr>
+                <tr class="hover:bg-slate-50 bg-slate-50/50">
+                  <td class="p-3 font-bold">SAT</td>
+                  <td class="p-3 font-semibold">Satisfaction</td>
+                  <td class="p-3">Tingkat kepuasan bawahan terhadap metode dan kepemimpinan atasan.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Table 2: Benchmark Universal -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-2">
+          
+          <div class="space-y-3">
+            <h5 class="font-bold text-slate-800 text-sm sm:text-base flex items-center gap-2">
+              <i class="fa-solid fa-bullseye text-sky-600"></i> Tabel 2: Target Benchmark Universal (Bass & Avolio)
+            </h5>
+            <div class="overflow-x-auto rounded-xl border border-slate-200">
+              <table class="w-full text-left text-xs sm:text-sm">
+                <thead class="bg-slate-800 text-white uppercase text-[11px]">
+                  <tr>
+                    <th class="p-2.5">Kategori Kepemimpinan</th>
+                    <th class="p-2.5">Target Benchmark</th>
+                    <th class="p-2.5">Kriteria Evaluasi</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 bg-white">
+                  <tr>
+                    <td class="p-2.5 font-bold text-sky-700">Transformasional</td>
+                    <td class="p-2.5 font-bold">&gt; 3.00</td>
+                    <td class="p-2.5 text-xs">Diharapkan Sangat Dominan</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-bold text-amber-700">Transaksional</td>
+                    <td class="p-2.5 font-bold">2.00 - 3.00</td>
+                    <td class="p-2.5 text-xs">Penyeimbang Operasional</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-bold text-rose-700">Passive / Avoidant</td>
+                    <td class="p-2.5 font-bold">&lt; 1.00</td>
+                    <td class="p-2.5 text-xs">Harus Sedapat Mungkin Minimal</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-bold text-emerald-700">Outcomes of Leadership</td>
+                    <td class="p-2.5 font-bold">&gt; 3.00</td>
+                    <td class="p-2.5 text-xs">Efektivitas &amp; Kepuasan Tinggi</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Table 3: Likert Rating Scale -->
+          <div class="space-y-3">
+            <h5 class="font-bold text-slate-800 text-sm sm:text-base flex items-center gap-2">
+              <i class="fa-solid fa-list-ol text-sky-600"></i> Tabel 3: Skala Penilaian Likert MLQ-5X
+            </h5>
+            <div class="overflow-x-auto rounded-xl border border-slate-200">
+              <table class="w-full text-left text-xs sm:text-sm">
+                <thead class="bg-slate-800 text-white uppercase text-[11px]">
+                  <tr>
+                    <th class="p-2.5 text-center">Skor</th>
+                    <th class="p-2.5">Frekuensi Perilaku</th>
+                    <th class="p-2.5">Keterangan Frekuensi</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 bg-white">
+                  <tr>
+                    <td class="p-2.5 text-center font-extrabold text-slate-700">0</td>
+                    <td class="p-2.5 font-semibold">Tidak Pernah</td>
+                    <td class="p-2.5 text-xs text-slate-500">Not at all (0% frekuensi)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 text-center font-extrabold text-slate-700">1</td>
+                    <td class="p-2.5 font-semibold">Jarang</td>
+                    <td class="p-2.5 text-xs text-slate-500">Once in a while (25% frekuensi)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 text-center font-extrabold text-slate-700">2</td>
+                    <td class="p-2.5 font-semibold">Kadang-kadang</td>
+                    <td class="p-2.5 text-xs text-slate-500">Sometimes (50% frekuensi)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 text-center font-extrabold text-slate-700">3</td>
+                    <td class="p-2.5 font-semibold">Cukup Sering</td>
+                    <td class="p-2.5 text-xs text-slate-500">Fairly often (75% frekuensi)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 text-center font-extrabold text-slate-700">4</td>
+                    <td class="p-2.5 font-semibold">Sering Sekali</td>
+                    <td class="p-2.5 text-xs text-slate-500">Frequently, if not always (100%)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================================= -->
+    <!-- TAB 2: KUESIONER MLQ-5X -->
+    <!-- ================================================================================= -->
+    <section id="tab-kuesioner" class="tab-content hidden space-y-8 animate-fade-in">
+
+      <!-- Alert Banner Validation Container -->
+      <div id="validation-alert" class="hidden bg-rose-50 border-l-4 border-rose-500 p-4 rounded-xl shadow-md space-y-2">
+        <div class="flex items-center space-x-2 text-rose-800 font-bold">
+          <i class="fa-solid fa-triangle-exclamation text-lg"></i>
+          <span>Peringatan Kelengkapan Pengisian Kuesioner!</span>
+        </div>
+        <p class="text-xs sm:text-sm text-rose-700" id="validation-message">
+          Mohon lengkapi seluruh item kuesioner dan data identitas sebelum menekan tombol Hitung dan Analisis.
+        </p>
+      </div>
+
+      <!-- Identity Form Card -->
+      <div id="card-identity" class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-4">
+          <div>
+            <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2.5">
+              <i class="fa-solid fa-id-card text-sky-600"></i> Identitas Responden & Subjeck Asesmen
+            </h3>
+            <p class="text-xs text-slate-500">Isi data identitas diri atau pemimpin yang dievaluasi dalam instrumen ini.</p>
+          </div>
+
+          <!-- Quick Fill Demo Action Button -->
+          <div class="flex items-center gap-2">
+            <button type="button" onclick="loadDemoData()" class="px-3.5 py-2 text-xs font-semibold bg-sky-50 text-sky-700 hover:bg-sky-100 border border-sky-300 rounded-lg transition-all flex items-center gap-1.5 shadow-sm">
+              <i class="fa-solid fa-bolt text-amber-500"></i> Isi Contoh Data (Demo)
+            </button>
+            <button type="button" onclick="clearForm()" class="px-3.5 py-2 text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 rounded-lg transition-all flex items-center gap-1.5">
+              <i class="fa-solid fa-rotate-left"></i> Kosongkan
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-sm">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1.5">Nama Pemimpin <span class="text-rose-500">*</span></label>
+            <input type="text" id="input-name" placeholder="Contoh: Budi Santoso, M.M." class="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition-all">
+          </div>
+
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1.5">Jabatan / Posisi <span class="text-rose-500">*</span></label>
+            <input type="text" id="input-position" placeholder="Contoh: Senior Manager Operations" class="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition-all">
+          </div>
+
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1.5">Departemen / Divisi <span class="text-rose-500">*</span></label>
+            <input type="text" id="input-department" placeholder="Contoh: Operations & Supply Chain" class="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition-all">
+          </div>
+
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1.5">Perusahaan / Organisasi <span class="text-rose-500">*</span></label>
+            <input type="text" id="input-company" placeholder="Contoh: PT Industri Nusantara Tbk" class="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition-all">
+          </div>
+
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1.5">Tanggal Evaluasi <span class="text-rose-500">*</span></label>
+            <input type="date" id="input-date" class="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition-all">
+          </div>
+
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1.5">Tipe Asesmen <span class="text-rose-500">*</span></label>
+            <select id="input-eval-type" class="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition-all bg-white">
+              <option value="Self-Assessment">Penilaian Mandiri (Self-Assessment)</option>
+              <option value="Subordinate 360">Penilaian Bawahan (Rater 360°)</option>
+              <option value="Peer 360">Penilaian Sejawat (Peer 360°)</option>
+              <option value="Superior 360">Penilaian Atasan Langsung</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Questionnaire 45 Items Container -->
+      <form id="form-mlq" class="space-y-4">
+        <div class="bg-slate-900 text-white rounded-2xl p-5 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div>
+            <h3 class="font-extrabold text-base sm:text-lg">Daftar 45 Indikator Perilaku MLQ-5X</h3>
+            <p class="text-xs text-slate-400">Pilih skala frekuensi perilaku (0 s/d 4) untuk setiap pernyataan di bawah ini.</p>
+          </div>
+          <div class="text-xs bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700 font-mono text-sky-300">
+            Skala: 0=Tidak Pernah | 1=Jarang | 2=Kadang | 3=Sering | 4=Sering Sekali
+          </div>
+        </div>
+
+        <div id="questionnaire-items-container" class="space-y-4">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+        <!-- Submit & Process Action -->
+        <div class="pt-6 pb-12 flex justify-center">
+          <button type="button" onclick="processQuestionnaire()" class="w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 text-white font-extrabold text-base rounded-2xl shadow-xl shadow-sky-600/25 hover:shadow-sky-600/40 transition-all transform hover:-translate-y-0.5 flex items-center justify-center space-x-3">
+            <i class="fa-solid fa-calculator text-xl"></i>
+            <span>Hitung dan Analisis Hasil Assessment</span>
+            <i class="fa-solid fa-arrow-right text-sm"></i>
+          </button>
+        </div>
+      </form>
+
+    </section>
+
+    <!-- ================================================================================= -->
+    <!-- TAB 3: HITUNG & ANALISIS -->
+    <!-- ================================================================================= -->
+    <section id="tab-analisis" class="tab-content hidden space-y-8 animate-fade-in">
+      
+      <!-- Top Action Toolbar for Exporting -->
+      <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 no-print">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-bold text-lg">
+            <i class="fa-solid fa-square-poll-vertical"></i>
+          </div>
+          <div>
+            <h3 class="font-extrabold text-slate-900 text-base sm:text-lg">Hasil Laporan Diagnostik Kepemimpinan</h3>
+            <p class="text-xs text-slate-500">Skor terakumulasi otomatis dari hasil penilaian 45 item MLQ-5X.</p>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-3 w-full sm:w-auto">
+          <button onclick="exportToWord()" class="flex-1 sm:flex-none px-4 py-2.5 bg-blue-700 hover:bg-blue-800 text-white text-xs sm:text-sm font-bold rounded-xl transition-all shadow-sm flex items-center justify-center space-x-2">
+            <i class="fa-solid fa-file-word"></i>
+            <span>Export MS Word (.docx)</span>
+          </button>
+          
+          <button onclick="window.print()" class="flex-1 sm:flex-none px-4 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-bold rounded-xl transition-all shadow-sm flex items-center justify-center space-x-2">
+            <i class="fa-solid fa-print"></i>
+            <span>Cetak / Export PDF</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Printable Document Header Profile (Visible on PDF/Print) -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 space-y-4">
+        <div class="border-b border-slate-200 pb-3 flex justify-between items-center">
+          <h4 class="font-bold text-slate-900 text-base flex items-center gap-2">
+            <i class="fa-solid fa-user-check text-sky-600"></i> Ringkasan Profil Responden Evaluation
+          </h4>
+          <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200" id="res-date-badge">Tanggal: -</span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-xs sm:text-sm">
+          <div>
+            <span class="block text-slate-400 text-xs">Nama Pemimpin</span>
+            <span class="font-bold text-slate-900" id="res-name">-</span>
+          </div>
+          <div>
+            <span class="block text-slate-400 text-xs">Jabatan / Posisi</span>
+            <span class="font-bold text-slate-900" id="res-position">-</span>
+          </div>
+          <div>
+            <span class="block text-slate-400 text-xs">Departemen</span>
+            <span class="font-bold text-slate-900" id="res-department">-</span>
+          </div>
+          <div>
+            <span class="block text-slate-400 text-xs">Perusahaan</span>
+            <span class="font-bold text-slate-900" id="res-company">-</span>
+          </div>
+          <div>
+            <span class="block text-slate-400 text-xs">Tanggal Evaluasi</span>
+            <span class="font-bold text-slate-900" id="res-date">-</span>
+          </div>
+          <div>
+            <span class="block text-slate-400 text-xs">Tipe Assessment</span>
+            <span class="font-bold text-sky-700" id="res-eval-type">-</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GAUGE CHARTS CONTAINER (4 Gauges) -->
+      <div class="space-y-4">
+        <h4 class="font-extrabold text-slate-900 text-base sm:text-lg flex items-center gap-2">
+          <i class="fa-solid fa-gauge-high text-sky-600"></i> Visualisasi Skor Gaya Kepemimpinan (Gauge Meters)
+        </h4>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          
+          <!-- Gauge 1: Transformational -->
+          <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200/80 flex flex-col items-center justify-between text-center">
+            <span class="text-xs font-bold uppercase tracking-wider text-sky-700 bg-sky-50 px-3 py-1 rounded-full border border-sky-200 mb-2">
+              Transformasional
+            </span>
+            <div id="gauge-transformational" class="w-44 h-28 my-1"></div>
+            <div class="mt-1 space-y-0.5">
+              <div class="text-2xl font-black text-slate-900" id="val-transformational">0.00 <span class="text-xs text-slate-400 font-normal">/ 4.00</span></div>
+              <span id="badge-transformational" class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 text-slate-600">Belum Ada Data</span>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-2">Target Benchmark: &gt; 3.00</p>
+          </div>
+
+          <!-- Gauge 2: Transactional -->
+          <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200/80 flex flex-col items-center justify-between text-center">
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-3 py-1 rounded-full border border-amber-200 mb-2">
+              Transaksional
+            </span>
+            <div id="gauge-transactional" class="w-44 h-28 my-1"></div>
+            <div class="mt-1 space-y-0.5">
+              <div class="text-2xl font-black text-slate-900" id="val-transactional">0.00 <span class="text-xs text-slate-400 font-normal">/ 4.00</span></div>
+              <span id="badge-transactional" class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 text-slate-600">Belum Ada Data</span>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-2">Target Benchmark: 2.00 - 3.00</p>
+          </div>
+
+          <!-- Gauge 3: Passive / Avoidant -->
+          <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200/80 flex flex-col items-center justify-between text-center">
+            <span class="text-xs font-bold uppercase tracking-wider text-rose-700 bg-rose-50 px-3 py-1 rounded-full border border-rose-200 mb-2">
+              Passive / Avoidant
+            </span>
+            <div id="gauge-passive" class="w-44 h-28 my-1"></div>
+            <div class="mt-1 space-y-0.5">
+              <div class="text-2xl font-black text-slate-900" id="val-passive">0.00 <span class="text-xs text-slate-400 font-normal">/ 4.00</span></div>
+              <span id="badge-passive" class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 text-slate-600">Belum Ada Data</span>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-2">Target Benchmark: &lt; 1.00</p>
+          </div>
+
+          <!-- Gauge 4: Outcomes -->
+          <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200/80 flex flex-col items-center justify-between text-center">
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 mb-2">
+              Outcomes (Hasil)
+            </span>
+            <div id="gauge-outcomes" class="w-44 h-28 my-1"></div>
+            <div class="mt-1 space-y-0.5">
+              <div class="text-2xl font-black text-slate-900" id="val-outcomes">0.00 <span class="text-xs text-slate-400 font-normal">/ 4.00</span></div>
+              <span id="badge-outcomes" class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 text-slate-600">Belum Ada Data</span>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-2">Target Benchmark: &gt; 3.00</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TABEL REKAPITULASI & BREAKDOWN 12 DIMENSI -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Tabel Rekapitulasi Utama (1/3 width) -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 space-y-4 lg:col-span-1">
+          <h4 class="font-extrabold text-slate-900 text-base flex items-center gap-2">
+            <i class="fa-solid fa-list-numeric text-sky-600"></i> Rekap Rekapitulasi Skor Utama
+          </h4>
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-left text-xs sm:text-sm">
+              <thead class="bg-slate-900 text-white uppercase text-[11px]">
+                <tr>
+                  <th class="p-2.5">Gaya Kepemimpinan</th>
+                  <th class="p-2.5 text-center">Skor Real</th>
+                  <th class="p-2.5 text-center">Target</th>
+                  <th class="p-2.5 text-center">Status</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white" id="tbody-recap-main">
+                <tr>
+                  <td class="p-2.5 font-bold text-sky-700">Transformasional</td>
+                  <td class="p-2.5 text-center font-black" id="td-rec-transf">-</td>
+                  <td class="p-2.5 text-center text-slate-500">&gt; 3.00</td>
+                  <td class="p-2.5 text-center" id="td-status-transf">-</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-amber-700">Transaksional</td>
+                  <td class="p-2.5 text-center font-black" id="td-rec-transac">-</td>
+                  <td class="p-2.5 text-center text-slate-500">2.00-3.00</td>
+                  <td class="p-2.5 text-center" id="td-status-transac">-</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-rose-700">Passive / Avoidant</td>
+                  <td class="p-2.5 text-center font-black" id="td-rec-passive">-</td>
+                  <td class="p-2.5 text-center text-slate-500">&lt; 1.00</td>
+                  <td class="p-2.5 text-center" id="td-status-passive">-</td>
+                </tr>
+                <tr class="bg-slate-50">
+                  <td class="p-2.5 font-bold text-emerald-700">Outcomes of Leadership</td>
+                  <td class="p-2.5 text-center font-black" id="td-rec-outcomes">-</td>
+                  <td class="p-2.5 text-center text-slate-500">&gt; 3.00</td>
+                  <td class="p-2.5 text-center" id="td-status-outcomes">-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tabel Breakdown 12 Dimensi MLQ-5X (2/3 width) -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 space-y-4 lg:col-span-2">
+          <h4 class="font-extrabold text-slate-900 text-base flex items-center gap-2">
+            <i class="fa-solid fa-table-list text-sky-600"></i> Breakdown Analisis Performa 12 Dimensi MLQ-5X
+          </h4>
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-left text-xs sm:text-sm">
+              <thead class="bg-slate-800 text-white uppercase text-[11px]">
+                <tr>
+                  <th class="p-2.5">Kode</th>
+                  <th class="p-2.5">Nama Dimensi MLQ-5X</th>
+                  <th class="p-2.5 text-center">Skor Real</th>
+                  <th class="p-2.5 text-center">Benchmark</th>
+                  <th class="p-2.5 text-center">Gap</th>
+                  <th class="p-2.5 text-center">Status Evaluasi</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white" id="tbody-dim-breakdown">
+                <!-- Dynamically populated via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BAGIAN ANALISIS NARRATIVE & INDIVIDUAL DEVELOPMENT PLAN (IDP) -->
+      <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-6">
+        <div class="border-b border-slate-200 pb-4">
+          <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2.5">
+            <i class="fa-solid fa-file-pen text-sky-600"></i> Analisis Naratif &amp; Rekomendasi Rencana Pengembangan (IDP)
+          </h3>
+          <p class="text-xs text-slate-500">Evaluasi deskriptif ilmiah berbasis hasil skor MLQ-5X dan rekomendasi tindak lanjut.</p>
+        </div>
+
+        <!-- Narrative Analysis Container -->
+        <div class="space-y-6 text-slate-700 leading-relaxed text-sm sm:text-base" id="narrative-container">
+          <!-- Dynamically generated via JS -->
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 py-6 border-t border-slate-800 text-xs text-center no-print mt-12">
+    <div class="max-w-7xl mx-auto px-4">
+      <p>© 2026 MLQ-5X Leadership Assessment &amp; Diagnostic Platform. Standardized Full Range Leadership Model (Bass &amp; Avolio).</p>
+    </div>
+  </footer>
+
+  <!-- ================================================================================= -->
+  <!-- JAVASCRIPT LOGIC & ENGINE -->
+  <!-- ================================================================================= -->
+  <script>
+    // Global Authentication State
+    let isAuthenticated = false;
+
+    // ---------------------------------------------------------------------------------
+    // 1. DATA DEFINITION: 45 ITEMS OF MLQ-5X IN INDONESIAN
+    // ---------------------------------------------------------------------------------
+    const mlqItems = [
+      { id: 1,  code: 'CR',   cat: 'Transaksional',     text: 'Saya memberikan bantuan kepada orang lain sebagai imbalan atas usaha mereka.' },
+      { id: 2,  code: 'CR',   cat: 'Transaksional',     text: 'Saya memperjelas apa yang dapat diharapkan orang lain ketika target tercapai.' },
+      { id: 3,  code: 'MBEP', cat: 'Passive/Avoidant',  text: 'Saya gagal mengintervensi sampai masalah menjadi serius.' },
+      { id: 4,  code: 'MBEA', cat: 'Transaksional',     text: 'Saya memfokuskan perhatian pada kegagalan memenuhi standar.' },
+      { id: 5,  code: 'LF',   cat: 'Passive/Avoidant',  text: 'Saya menghindari keterlibatan ketika masalah penting muncul.' },
+      { id: 6,  code: 'IM',   cat: 'Transformasional',  text: 'Saya berbicara dengan optimis tentang masa depan.' },
+      { id: 7,  code: 'IA',   cat: 'Transformasional',  text: 'Saya merasa bangga dapat terasosiasi / bekerjasama dengan orang lain.' },
+      { id: 8,  code: 'IB',   cat: 'Transformasional',  text: 'Saya membahas nilai-nilai dan keyakinan yang paling penting bagi saya.' },
+      { id: 9,  code: 'CR',   cat: 'Transaksional',     text: 'Saya menentukan indikator khusus untuk pencapaian kinerja.' },
+      { id: 10, code: 'IS',   cat: 'Transformasional',  text: 'Saya mendorong orang lain untuk melihat masalah dari berbagai sudut pandang.' },
+      { id: 11, code: 'IC',   cat: 'Transformasional',  text: 'Saya membantu orang lain untuk mengembangkan kekuatan mereka.' },
+      { id: 12, code: 'MBEP', cat: 'Passive/Avoidant',  text: 'Saya menunggu hal-hal menjadi salah sebelum mengambil tindakan.' },
+      { id: 13, code: 'IM',   cat: 'Transformasional',  text: 'Saya berbicara secara antusias tentang apa yang perlu diselesaikan.' },
+      { id: 14, code: 'IB',   cat: 'Transformasional',  text: 'Saya menekankan pentingnya memiliki rasa tujuan bersama.' },
+      { id: 15, code: 'IC',   cat: 'Transformasional',  text: 'Saya menghabiskan waktu untuk melatih dan memberikan mentoring.' },
+      { id: 16, code: 'MBEA', cat: 'Transaksional',     text: 'Saya mengarahkan perhatian saya pada penyimpangan dan kesalahan.' },
+      { id: 17, code: 'IA',   cat: 'Transformasional',  text: 'Saya menunjukkan bahwa saya dapat mengatasi masalah dengan baik.' },
+      { id: 18, code: 'IM',   cat: 'Transformasional',  text: 'Saya menyatakan keyakinan bahwa target kerja akan tercapai.' },
+      { id: 19, code: 'IC',   cat: 'Transformasional',  text: 'Saya memperlakukan orang lain sebagai individu, bukan sekadar anggota kelompok.' },
+      { id: 20, code: 'MBEP', cat: 'Passive/Avoidant',  text: 'Saya menunjukkan bahwa masalah harus menjadi kronis sebelum saya bertindak.' },
+      { id: 21, code: 'IA',   cat: 'Transformasional',  text: 'Saya bertindak dengan cara yang membangun rasa hormat dari orang lain.' },
+      { id: 22, code: 'MBEA', cat: 'Transaksional',     text: 'Saya mengonsentrasikan penuh perhatian pada penanganan kesalahan.' },
+      { id: 23, code: 'IB',   cat: 'Transformasional',  text: 'Saya mempertimbangkan konsekuensi moral dan etis dari keputusan saya.' },
+      { id: 24, code: 'MBEA', cat: 'Transaksional',     text: 'Saya melacak semua kesalahan yang terjadi dalam tim.' },
+      { id: 25, code: 'LF',   cat: 'Passive/Avoidant',  text: 'Saya tidak hadir saat dibutuhkan oleh anggota tim.' },
+      { id: 26, code: 'IS',   cat: 'Transformasional',  text: 'Saya menyarankan cara-cara baru dalam melihat bagaimana menyelesaikan tugas.' },
+      { id: 27, code: 'IB',   cat: 'Transformasional',  text: 'Saya menekankan pentingnya memiliki komitmen pada misi bersama.' },
+      { id: 28, code: 'LF',   cat: 'Passive/Avoidant',  text: 'Saya menunda merespons pertanyaan-pertanyaan mendesak.' },
+      { id: 29, code: 'IM',   cat: 'Transformasional',  text: 'Saya menetapkan standar tinggi yang menginspirasi pencapaian tim.' },
+      { id: 30, code: 'IS',   cat: 'Transformasional',  text: 'Saya mendorong tim untuk meninjau kembali asumsi dasar mereka.' },
+      { id: 31, code: 'IA',   cat: 'Transformasional',  text: 'Saya membuat orang lain merasa berharga saat bekerja bersama saya.' },
+      { id: 32, code: 'IS',   cat: 'Transformasional',  text: 'Saya mendorong tim untuk menyelesaikan masalah dari perspektif baru.' },
+      { id: 33, code: 'IC',   cat: 'Transformasional',  text: 'Saya membantu orang lain menemukan makna dalam pekerjaan mereka.' },
+      { id: 34, code: 'CR',   cat: 'Transaksional',     text: 'Saya menyatakan kepuasan ketika orang lain memenuhi ekspektasi.' },
+      { id: 35, code: 'MBEP', cat: 'Passive/Avoidant',  text: 'Saya percaya bahwa \'jika sesuatu tidak rusak, tidak perlu diperbaiki\'.' },
+      { id: 36, code: 'CR',   cat: 'Transaksional',     text: 'Saya mengambil tindakan tegas sebelum masalah menjadi tidak terkendali.' },
+      { id: 37, code: 'EE',   cat: 'Outcomes',          text: 'Saya melakukan hal-hal yang membuat bawahan mau bekerja lebih keras.' },
+      { id: 38, code: 'EE',   cat: 'Outcomes',          text: 'Saya mendorong anggota tim untuk berproduksi melebihi harapan biasa.' },
+      { id: 39, code: 'EE',   cat: 'Outcomes',          text: 'Saya meningkatkan keinginan anggota tim untuk sukses.' },
+      { id: 40, code: 'EFF',  cat: 'Outcomes',          text: 'Saya efektif dalam memenuhi kebutuhan kerja anggota tim.' },
+      { id: 41, code: 'EFF',  cat: 'Outcomes',          text: 'Saya efektif dalam mewakili tim di hadapan otoritas yang lebih tinggi.' },
+      { id: 42, code: 'EFF',  cat: 'Outcomes',          text: 'Saya efektif dalam memenuhi persyaratan dan target organisasi.' },
+      { id: 43, code: 'EFF',  cat: 'Outcomes',          text: 'Saya memimpin tim secara efektif sehingga unit kerja berkinerja tinggi.' },
+      { id: 44, code: 'SAT',  cat: 'Outcomes',          text: 'Saya bekerja dengan anggota tim dalam cara yang memuaskan mereka.' },
+      { id: 45, code: 'SAT',  cat: 'Outcomes',          text: 'Saya menerapkan metode kepemimpinan yang memuaskan tim.' }
+    ];
+
+    const dimensionsMeta = {
+      IA:   { name: 'Idealized Attributes',           cat: 'Transformasional', target: 3.00 },
+      IB:   { name: 'Idealized Behaviors',            cat: 'Transformasional', target: 3.00 },
+      IM:   { name: 'Inspirational Motivation',       cat: 'Transformasional', target: 3.25 },
+      IS:   { name: 'Intellectual Stimulation',       cat: 'Transformasional', target: 3.00 },
+      IC:   { name: 'Individualized Consideration',   cat: 'Transformasional', target: 3.00 },
+      CR:   { name: 'Contingent Reward',              cat: 'Transaksional',    target: 2.50 },
+      MBEA: { name: 'Management by Exception (Active)', cat: 'Transaksional',    target: 1.50 },
+      MBEP: { name: 'Management by Exception (Passive)',cat: 'Passive/Avoidant', target: 1.00 },
+      LF:   { name: 'Laissez-Faire',                  cat: 'Passive/Avoidant', target: 0.50 },
+      EE:   { name: 'Extra Effort',                   cat: 'Outcomes',         target: 3.00 },
+      EFF:  { name: 'Effectiveness',                  cat: 'Outcomes',         target: 3.50 },
+      SAT:  { name: 'Satisfaction',                   cat: 'Outcomes',         target: 3.50 }
+    };
+
+    // Global state calculated scores
+    let currentCalculatedScores = null;
+
+    // ---------------------------------------------------------------------------------
+    // 2. INITIALIZATION ON DOM LOAD
+    // ---------------------------------------------------------------------------------
+    document.addEventListener('DOMContentLoaded', () => {
+      renderQuestionnaireItems();
+      // Set default date to today
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('input-date').value = today;
+    });
+
+    // Render Tab Switch Logic with Password Protection
+    function switchTab(tabKey) {
+      if ((tabKey === 'kuesioner' || tabKey === 'analisis') && !isAuthenticated) {
+        const pwd = prompt('Masukkan password untuk mengakses fitur ini:');
+        if (pwd === 'leadership') {
+          isAuthenticated = true;
+        } else {
+          if (pwd !== null && pwd !== '') {
+            alert('Password salah! Akses ditolak.');
+          }
+          return;
+        }
+      }
+
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('text-sky-400', 'bg-slate-700/80', 'shadow-sm', 'border', 'border-slate-600/50');
+        btn.classList.add('text-slate-400');
+      });
+
+      const selectedTab = document.getElementById(`tab-${tabKey}`);
+      const selectedBtn = document.getElementById(`btn-tab-${tabKey}`);
+
+      if (selectedTab && selectedBtn) {
+        selectedTab.classList.remove('hidden');
+        selectedBtn.classList.remove('text-slate-400');
+        selectedBtn.classList.add('text-sky-400', 'bg-slate-700/80', 'shadow-sm', 'border', 'border-slate-600/50');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ---------------------------------------------------------------------------------
+    // 3. TAB 2: RENDER QUESTIONNAIRE & AUTO-DEMO FILL
+    // ---------------------------------------------------------------------------------
+    function renderQuestionnaireItems() {
+      const container = document.getElementById('questionnaire-items-container');
+      container.innerHTML = '';
+
+      mlqItems.forEach((item) => {
+        const itemCard = document.createElement('div');
+        itemCard.id = `q-card-${item.id}`;
+        itemCard.className = "bg-white rounded-2xl p-5 shadow-sm border border-slate-200/80 transition-all space-y-3";
+
+        let badgeColor = 'bg-sky-50 text-sky-700 border-sky-200';
+        if (item.cat === 'Transaksional') badgeColor = 'bg-amber-50 text-amber-700 border-amber-200';
+        if (item.cat === 'Passive/Avoidant') badgeColor = 'bg-rose-50 text-rose-700 border-rose-200';
+        if (item.cat === 'Outcomes') badgeColor = 'bg-emerald-50 text-emerald-700 border-emerald-200';
+
+        itemCard.innerHTML = `
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
+            <div class="flex items-center space-x-2.5">
+              <span class="w-7 h-7 rounded-lg bg-slate-900 text-white font-bold text-xs flex items-center justify-center font-mono">
+                ${item.id}
+              </span>
+              <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border ${badgeColor}">
+                Dimensi: ${item.code}
+              </span>
+            </div>
+            <span class="text-[11px] text-slate-400 font-medium">MLQ-5X Form Item ${item.id} of 45</span>
+          </div>
+
+          <p class="text-sm sm:text-base font-semibold text-slate-800 leading-snug">
+            "${item.text}"
+          </p>
+
+          <div class="pt-1">
+            <div class="grid grid-cols-5 gap-1.5 sm:gap-3 text-center">
+              ${[0, 1, 2, 3, 4].map(val => {
+                const labels = ['0: Tidak Pernah', '1: Jarang', '2: Kadang', '3: Cukup Sering', '4: Sering Sekali'];
+                return `
+                  <label class="cursor-pointer group flex flex-col items-center justify-between p-2 rounded-xl border border-slate-200 hover:border-sky-400 hover:bg-sky-50/50 transition-all">
+                    <input type="radio" name="q_${item.id}" value="${val}" class="w-4 h-4 text-sky-600 focus:ring-sky-500 cursor-pointer mb-1.5" onchange="clearItemError(${item.id})">
+                    <span class="text-[10px] sm:text-xs font-semibold text-slate-600 group-hover:text-sky-900 leading-tight">
+                      ${labels[val]}
+                    </span>
+                  </label>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        `;
+
+        container.appendChild(itemCard);
+      });
+    }
+
+    function clearItemError(itemId) {
+      const card = document.getElementById(`q-card-${itemId}`);
+      if (card) {
+        card.classList.remove('border-rose-500', 'ring-2', 'ring-rose-200');
+        card.classList.add('border-slate-200/80');
+      }
+    }
+
+    // Fast Demo Fill for Testing
+    function loadDemoData() {
+      document.getElementById('input-name').value = 'Budi Santoso, M.M.';
+      document.getElementById('input-position').value = 'Senior Manager Operations';
+      document.getElementById('input-department').value = 'Operations & Supply Chain';
+      document.getElementById('input-company').value = 'PT Industri Nusantara Tbk';
+      document.getElementById('input-eval-type').value = 'Self-Assessment';
+
+      // Preset realistic high transformational demo values
+      const demoScores = {
+        1:3, 2:4, 3:1, 4:2, 5:0, 6:4, 7:4, 8:3, 9:3, 10:3,
+        11:4, 12:1, 13:4, 14:3, 15:3, 16:1, 17:4, 18:4, 19:4, 20:0,
+        21:4, 22:1, 23:4, 24:2, 25:0, 26:3, 27:3, 28:1, 29:4, 30:3,
+        31:4, 32:4, 33:3, 34:3, 35:1, 36:3, 37:4, 38:3, 39:4, 40:4,
+        41:3, 42:4, 43:3, 44:4, 45:3
+      };
+
+      mlqItems.forEach(item => {
+        const val = demoScores[item.id] !== undefined ? demoScores[item.id] : 3;
+        const radio = document.querySelector(`input[name="q_${item.id}"][value="${val}"]`);
+        if (radio) {
+          radio.checked = true;
+          clearItemError(item.id);
+        }
+      });
+
+      // Clear validation alert
+      document.getElementById('validation-alert').classList.add('hidden');
+    }
+
+    function clearForm() {
+      document.getElementById('input-name').value = '';
+      document.getElementById('input-position').value = '';
+      document.getElementById('input-department').value = '';
+      document.getElementById('input-company').value = '';
+      
+      mlqItems.forEach(item => {
+        const radios = document.querySelectorAll(`input[name="q_${item.id}"]`);
+        radios.forEach(r => r.checked = false);
+        clearItemError(item.id);
+      });
+
+      document.getElementById('validation-alert').classList.add('hidden');
+    }
+
+    // ---------------------------------------------------------------------------------
+    // 4. VALIDATION & PROCESSING LOGIC
+    // ---------------------------------------------------------------------------------
+    function processQuestionnaire() {
+      const unansweredFields = [];
+
+      // Check identity fields
+      const name = document.getElementById('input-name').value.trim();
+      const position = document.getElementById('input-position').value.trim();
+      const department = document.getElementById('input-department').value.trim();
+      const company = document.getElementById('input-company').value.trim();
+
+      const identityCard = document.getElementById('card-identity');
+      if (!name || !position || !department || !company) {
+        unansweredFields.push('Data Identitas (Nama/Posisi/Divisi/Perusahaan)');
+        identityCard.classList.add('border-rose-500', 'ring-2', 'ring-rose-200');
+      } else {
+        identityCard.classList.remove('border-rose-500', 'ring-2', 'ring-rose-200');
+      }
+
+      // Check all 45 questionnaire items
+      const responses = {};
+      const missingQuestions = [];
+
+      mlqItems.forEach(item => {
+        const selected = document.querySelector(`input[name="q_${item.id}"]:checked`);
+        if (!selected) {
+          missingQuestions.push(item.id);
+          const card = document.getElementById(`q-card-${item.id}`);
+          if (card) {
+            card.classList.add('border-rose-500', 'ring-2', 'ring-rose-200');
+          }
+        } else {
+          responses[item.id] = parseInt(selected.value, 10);
+        }
+      });
+
+      if (missingQuestions.length > 0) {
+        unansweredFields.push(`Item Pernyataan No: ${missingQuestions.join(', ')}`);
+      }
+
+      // If validation fails
+      const alertBox = document.getElementById('validation-alert');
+      const alertMsg = document.getElementById('validation-message');
+
+      if (unansweredFields.length > 0) {
+        alertMsg.innerHTML = `<strong>Terdapat data yang belum lengkap:</strong><br>${unansweredFields.join('<br>')}`;
+        alertBox.classList.remove('hidden');
+
+        // Smooth scroll to first missing element
+        if (!name || !position || !department || !company) {
+          identityCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else if (missingQuestions.length > 0) {
+          const firstCard = document.getElementById(`q-card-${missingQuestions[0]}`);
+          if (firstCard) firstCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        return;
+      }
+
+      // If validation succeeds: Calculate Scores
+      alertBox.classList.add('hidden');
+      calculateScores(responses);
+      switchTab('analisis');
+    }
+
+    // ---------------------------------------------------------------------------------
+    // 5. SCORE CALCULATIONS & TAB 3 RENDERING
+    // ---------------------------------------------------------------------------------
+    function calculateScores(responses) {
+      // Aggregate scores per dimension
+      const dimTotals = { IA:0, IB:0, IM:0, IS:0, IC:0, CR:0, MBEA:0, MBEP:0, LF:0, EE:0, EFF:0, SAT:0 };
+      const dimCounts = { IA:0, IB:0, IM:0, IS:0, IC:0, CR:0, MBEA:0, MBEP:0, LF:0, EE:0, EFF:0, SAT:0 };
+
+      mlqItems.forEach(item => {
+        const val = responses[item.id];
+        dimTotals[item.code] += val;
+        dimCounts[item.code] += 1;
+      });
+
+      const dimScores = {};
+      Object.keys(dimTotals).forEach(code => {
+        dimScores[code] = dimCounts[code] > 0 ? (dimTotals[code] / dimCounts[code]) : 0;
+      });
+
+      // Main Group Scores
+      const transformational = (dimScores.IA + dimScores.IB + dimScores.IM + dimScores.IS + dimScores.IC) / 5;
+      const transactional = (dimScores.CR + dimScores.MBEA) / 2;
+      const passive = (dimScores.MBEP + dimScores.LF) / 2;
+      const outcomes = (dimScores.EE + dimScores.EFF + dimScores.SAT) / 3;
+
+      currentCalculatedScores = {
+        dimScores,
+        transformational,
+        transactional,
+        passive,
+        outcomes
+      };
+
+      // Populate Header Profile Information
+      const name = document.getElementById('input-name').value;
+      const position = document.getElementById('input-position').value;
+      const department = document.getElementById('input-department').value;
+      const company = document.getElementById('input-company').value;
+      const dateVal = document.getElementById('input-date').value;
+      const evalType = document.getElementById('input-eval-type').value;
+
+      document.getElementById('res-name').innerText = name;
+      document.getElementById('res-position').innerText = position;
+      document.getElementById('res-department').innerText = department;
+      document.getElementById('res-company').innerText = company;
+      document.getElementById('res-date').innerText = dateVal;
+      document.getElementById('res-date-badge').innerText = `Tanggal: ${dateVal}`;
+      document.getElementById('res-eval-type').innerText = evalType;
+
+      // Render Gauges
+      renderGauge('gauge-transformational', transformational, '#0284c7');
+      renderGauge('gauge-transactional', transactional, '#f59e0b');
+      renderGauge('gauge-passive', passive, '#ef4444');
+      renderGauge('gauge-outcomes', outcomes, '#10b981');
+
+      // Update Gauge Value Texts & Badges
+      document.getElementById('val-transformational').innerHTML = `${transformational.toFixed(2)} <span class="text-xs text-slate-400 font-normal">/ 4.00</span>`;
+      document.getElementById('val-transactional').innerHTML = `${transactional.toFixed(2)} <span class="text-xs text-slate-400 font-normal">/ 4.00</span>`;
+      document.getElementById('val-passive').innerHTML = `${passive.toFixed(2)} <span class="text-xs text-slate-400 font-normal">/ 4.00</span>`;
+      document.getElementById('val-outcomes').innerHTML = `${outcomes.toFixed(2)} <span class="text-xs text-slate-400 font-normal">/ 4.00</span>`;
+
+      updateBadge('badge-transformational', transformational, 3.00, true);
+      updateBadge('badge-transactional', transactional, 2.00, true);
+      updateBadge('badge-passive', passive, 1.00, false); // Lower is better
+      updateBadge('badge-outcomes', outcomes, 3.00, true);
+
+      // Render Main Recap Table
+      renderMainRecapTable(transformational, transactional, passive, outcomes);
+
+      // Render Breakdown 12 Dimensions Table
+      renderBreakdownTable(dimScores);
+
+      // Render Comprehensive Narrative & IDP
+      renderNarrativeAnalysis(name, transformational, transactional, passive, outcomes, dimScores);
+    }
+
+    // Helper: Badge Evaluator
+    function updateBadge(elementId, val, targetVal, higherIsBetter) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+
+      if (higherIsBetter) {
+        if (val >= targetVal) {
+          el.className = 'inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300';
+          el.innerText = 'Memenuhi Target';
+        } else {
+          el.className = 'inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300';
+          el.innerText = 'Perlu Peningkatan';
+        }
+      } else {
+        // Lower is better (Passive)
+        if (val <= targetVal) {
+          el.className = 'inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300';
+          el.innerText = 'Baik (Sangat Rendah)';
+        } else {
+          el.className = 'inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-rose-100 text-rose-800 border border-rose-300';
+          el.innerText = 'Perlu Dikurangi!';
+        }
+      }
+    }
+
+    // ---------------------------------------------------------------------------------
+    // 6. SVG GAUGE RENDERER
+    // ---------------------------------------------------------------------------------
+    function renderGauge(containerId, score, colorHex) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      // Clamp score 0 to 4
+      const clampedScore = Math.max(0, Math.min(4, score));
+      // Map 0 - 4 score to angle -90 to +90 degrees
+      const angle = -90 + (clampedScore / 4.0) * 180;
+
+      container.innerHTML = `
+        <svg viewBox="0 0 200 120" class="w-full h-full">
+          <!-- Background Arc -->
+          <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="#e2e8f0" stroke-width="16" stroke-linecap="round" />
+          
+          <!-- Value Arc -->
+          <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="${colorHex}" stroke-width="16" stroke-linecap="round"
+                stroke-dasharray="251.2" stroke-dashoffset="${251.2 - (clampedScore / 4.0) * 251.2}" />
+          
+          <!-- Center Pivot -->
+          <circle cx="100" cy="100" r="7" fill="#0f172a" />
+          
+          <!-- Needle -->
+          <g transform="rotate(${angle} 100 100)">
+            <line x1="100" y1="100" x2="100" y2="30" stroke="#0f172a" stroke-width="3.5" stroke-linecap="round" />
+          </g>
+        </svg>
+      `;
+    }
+
+    // ---------------------------------------------------------------------------------
+    // 7. TABLES & NARRATIVE RENDERERS
+    // ---------------------------------------------------------------------------------
+    function renderMainRecapTable(transf, transac, pass, outc) {
+      const getStatusBadge = (score, target, higherIsBetter) => {
+        if (higherIsBetter) {
+          return score >= target 
+            ? `<span class="px-2 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">Memenuhi Target</span>`
+            : `<span class="px-2 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800">Perlu Peningkatan</span>`;
+        } else {
+          return score <= target 
+            ? `<span class="px-2 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">Baik (Rendah)</span>`
+            : `<span class="px-2 py-0.5 rounded-full text-xs font-bold bg-rose-100 text-rose-800">Perlu Dikurangi!</span>`;
+        }
+      };
+
+      document.getElementById('td-rec-transf').innerText = transf.toFixed(2);
+      document.getElementById('td-status-transf').innerHTML = getStatusBadge(transf, 3.00, true);
+
+      document.getElementById('td-rec-transac').innerText = transac.toFixed(2);
+      document.getElementById('td-status-transac').innerHTML = getStatusBadge(transac, 2.00, true);
+
+      document.getElementById('td-rec-passive').innerText = pass.toFixed(2);
+      document.getElementById('td-status-passive').innerHTML = getStatusBadge(pass, 1.00, false);
+
+      document.getElementById('td-rec-outcomes').innerText = outc.toFixed(2);
+      document.getElementById('td-status-outcomes').innerHTML = getStatusBadge(outc, 3.00, true);
+    }
+
+    function renderBreakdownTable(dimScores) {
+      const tbody = document.getElementById('tbody-dim-breakdown');
+      tbody.innerHTML = '';
+
+      Object.keys(dimensionsMeta).forEach(code => {
+        const meta = dimensionsMeta[code];
+        const score = dimScores[code] || 0;
+        const gap = score - meta.target;
+
+        const higherIsBetter = meta.cat !== 'Passive/Avoidant';
+        let statusBadge = '';
+        if (higherIsBetter) {
+          statusBadge = score >= meta.target 
+            ? `<span class="px-2 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">Memenuhi Target</span>`
+            : `<span class="px-2 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800">Perlu Peningkatan</span>`;
+        } else {
+          statusBadge = score <= meta.target 
+            ? `<span class="px-2 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">Baik (Rendah)</span>`
+            : `<span class="px-2 py-0.5 rounded-full text-xs font-bold bg-rose-100 text-rose-800">Perlu Dikurangi!</span>`;
+        }
+
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-slate-50 transition-colors';
+        tr.innerHTML = `
+          <td class="p-2.5 font-bold text-slate-800">${code}</td>
+          <td class="p-2.5 font-semibold text-slate-700">${meta.name}</td>
+          <td class="p-2.5 text-center font-black">${score.toFixed(2)}</td>
+          <td class="p-2.5 text-center text-slate-500">${meta.target.toFixed(2)}</td>
+          <td class="p-2.5 text-center font-mono font-bold ${gap >= 0 ? 'text-emerald-600' : 'text-rose-600'}">
+            ${gap >= 0 ? '+' : ''}${gap.toFixed(2)}
+          </td>
+          <td class="p-2.5 text-center">${statusBadge}</td>
+        `;
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    function renderNarrativeAnalysis(name, transf, transac, pass, outc, dimScores) {
+      const container = document.getElementById('narrative-container');
+      
+      let dominantStyle = 'Transformasional';
+      if (transac > transf && transac > pass) dominantStyle = 'Transaksional';
+      if (pass > transf && pass > transac) dominantStyle = 'Passive / Avoidant';
+
+      container.innerHTML = `
+        <div class="bg-sky-50 border-l-4 border-sky-600 p-4 rounded-r-xl space-y-2">
+          <h5 class="font-extrabold text-sky-900 text-base flex items-center gap-2">
+            <i class="fa-solid fa-chart-pie"></i> 1. Ringkasan Diagnostik Kepemimpinan Dominan
+          </h5>
+          <p class="text-sm text-sky-800 leading-relaxed">
+            Berdasarkan agregasi pengukuran 45 indikator instrumen MLQ-5X, profil kepemimpinan <strong>${name}</strong> secara dominan mencerminkan karakter <strong>Kepemimpinan ${dominantStyle}</strong> dengan skor rata-rata <strong>${transf.toFixed(2)}</strong> (dari skala 4.00). Profil ini dipadukan dengan skor gaya Transaksional sebesar <strong>${transac.toFixed(2)}</strong> dan gaya Passive/Avoidant sebesar <strong>${pass.toFixed(2)}</strong>.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <h5 class="font-bold text-slate-900 text-base flex items-center gap-2">
+            <i class="fa-solid fa-square-check text-emerald-600"></i> 2. Evaluasi Kekuatan Kepemimpinan (Key Strengths)
+          </h5>
+          <p class="text-sm text-slate-700 leading-relaxed">
+            Subjek menunjukkan kinerja luar biasa pada aspek <strong>Inspirational Motivation (IM: ${dimScores.IM.toFixed(2)})</strong> dan <strong>Idealized Attributes (IA: ${dimScores.IA.toFixed(2)})</strong>. Pemimpin dipersepsikan memiliki wibawa moral dan integritas personal yang kuat, serta mampu menyampaikan visi misi organisasi secara optimis dan menggugah antusiasme seluruh anggota tim operasional.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <h5 class="font-bold text-slate-900 text-base flex items-center gap-2">
+            <i class="fa-solid fa-triangle-exclamation text-amber-600"></i> 3. Area Peluang Peningkatan (Areas for Growth)
+          </h5>
+          <p class="text-sm text-slate-700 leading-relaxed">
+            Meskipun aspek kepemimpinan secara umum sangat positif, subjek disarankan untuk terus meningkatkan dimensi <strong>Intellectual Stimulation (IS: ${dimScores.IS.toFixed(2)})</strong>. Memberikan ruang yang lebih terbuka bagi anggota tim untuk mempertanyakan cara kerja konvensional, memproposalkan gagasan inovatif baru, dan melakukan perbaikan proses operasional secara mandiri akan semakin memperkuat adaptabilitas organisasi.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <h5 class="font-bold text-slate-900 text-base flex items-center gap-2">
+            <i class="fa-solid fa-users text-sky-600"></i> 4. Analisis Dampak Hasil Kepemimpinan (Outcomes Analysis)
+          </h5>
+          <p class="text-sm text-slate-700 leading-relaxed">
+            Indikator dampak kepemimpinan (<em>Outcomes of Leadership</em>) mencapai akumulasi skor <strong>${outc.toFixed(2)}</strong> (di atas target benchmark 3.00). Hal ini mengonfirmasi bahwa gaya kepemimpinan yang diterapkan terbukti secara nyata memicu dorongan usaha ekstra bawahan (<strong>Extra Effort: ${dimScores.EE.toFixed(2)}</strong>), menciptakan efektivitas unit kerja (<strong>Effectiveness: ${dimScores.EFF.toFixed(2)}</strong>), serta menghasilkan tingkat kepuasan tim yang tinggi (<strong>Satisfaction: ${dimScores.SAT.toFixed(2)}</strong>).
+          </p>
+        </div>
+
+        <!-- IDP Strategy Cards -->
+        <div class="bg-slate-900 text-white p-6 rounded-2xl space-y-4 shadow-lg border border-slate-800">
+          <h5 class="font-bold text-sky-400 text-base flex items-center gap-2">
+            <i class="fa-solid fa-compass text-amber-400"></i> 5. Rencana Aksi Pengembangan Individu (Individual Development Plan - IDP)
+          </h5>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
+            
+            <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 space-y-2">
+              <span class="font-bold text-sky-300 block">Aksi 1: Mentoring 1-on-1 (IC)</span>
+              <p class="text-slate-300 leading-relaxed">
+                Menjadwalkan sesi coaching dan mentoring personal secara rutin dengan talenta kunci untuk mendampingi pengembangan karir mereka.
+              </p>
+            </div>
+
+            <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 space-y-2">
+              <span class="font-bold text-sky-300 block">Aksi 2: Budaya Inovasi Kaizen (IS)</span>
+              <p class="text-slate-300 leading-relaxed">
+                Membuka forum inovasi bulanan di mana tim ditantang untuk mengajukan ide penyelesaian masalah operasional secara mandiri.
+              </p>
+            </div>
+
+            <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 space-y-2">
+              <span class="font-bold text-sky-300 block">Aksi 3: Pengakuan Prestasi (CR)</span>
+              <p class="text-slate-300 leading-relaxed">
+                Mempertahankan transparansi kesepakatan KPI dan memberikan apresiasi apresiatif yang konsisten ketika target tim tercapai.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      `;
+    }
+
+    // ---------------------------------------------------------------------------------
+    // 8. EXPORT TO MS WORD (.DOCX BLOB)
+    // ---------------------------------------------------------------------------------
+    function exportToWord() {
+      if (!currentCalculatedScores) {
+        alert('Mohon selesaikan dan hitung pengisian kuesioner terlebih dahulu.');
+        return;
+      }
+
+      const name = document.getElementById('input-name').value || 'Responden';
+      const position = document.getElementById('input-position').value || '-';
+      const department = document.getElementById('input-department').value || '-';
+      const company = document.getElementById('input-company').value || '-';
+      const dateVal = document.getElementById('input-date').value || '-';
+      const evalType = document.getElementById('input-eval-type').value || '-';
+
+      const s = currentCalculatedScores;
+
+      const htmlContent = `
+        <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+        <head>
+          <meta charset='utf-8'>
+          <title>Laporan Hasil MLQ-5X Assessment</title>
+          <style>
+            body { font-family: 'Calibri', sans-serif; font-size: 11pt; color: #1e293b; line-height: 1.5; }
+            h1 { font-size: 18pt; color: #075985; text-align: center; margin-bottom: 5px; }
+            h2 { font-size: 13pt; color: #0369a1; border-bottom: 2px solid #0284c7; padding-bottom: 4px; margin-top: 20px; }
+            table { border-collapse: collapse; width: 100%; margin-top: 10px; margin-bottom: 15px; font-size: 10pt; }
+            th, td { border: 1px solid #cbd5e1; padding: 6px 10px; text-align: left; }
+            th { background-color: #0f172a; color: #ffffff; font-weight: bold; }
+            .bg-alt { background-color: #f8fafc; }
+            .badge { font-weight: bold; padding: 2px 6px; border-radius: 4px; font-size: 9pt; }
+          </style>
+        </head>
+        <body>
+          <h1>MLQ-5X Leadership Diagnostic Report</h1>
+          <p style="text-align:center; color:#64748b; font-size:10pt;">Full Range Leadership Model Assessment (Bass & Avolio)</p>
+          <hr style="border:0; border-top:1px solid #cbd5e1; margin-bottom:20px;">
+
+          <h2>1. Profil Responden Evaluation</h2>
+          <table>
+            <tr><td><strong>Nama Pemimpin:</strong> ${name}</td><td><strong>Jabatan:</strong> ${position}</td></tr>
+            <tr><td><strong>Departemen:</strong> ${department}</td><td><strong>Perusahaan:</strong> ${company}</td></tr>
+            <tr><td><strong>Tanggal Asesmen:</strong> ${dateVal}</td><td><strong>Tipe Evaluation:</strong> ${evalType}</td></tr>
+          </table>
+
+          <h2>2. Rekapitulasi Skor Kepemimpinan Utama</h2>
+          <table>
+            <thead>
+              <tr><th>Kategori Kepemimpinan</th><th style="text-align:center;">Skor Real (0 - 4)</th><th style="text-align:center;">Target Benchmark</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Kepemimpinan Transformasional</strong></td><td style="text-align:center;"><strong>${s.transformational.toFixed(2)}</strong></td><td style="text-align:center;">&gt; 3.00</td></tr>
+              <tr class="bg-alt"><td><strong>Kepemimpinan Transaksional</strong></td><td style="text-align:center;"><strong>${s.transactional.toFixed(2)}</strong></td><td style="text-align:center;">2.00 - 3.00</td></tr>
+              <tr><td><strong>Kepemimpinan Passive / Avoidant</strong></td><td style="text-align:center;"><strong>${s.passive.toFixed(2)}</strong></td><td style="text-align:center;">&lt; 1.00</td></tr>
+              <tr class="bg-alt"><td><strong>Hasil Kepemimpinan (Outcomes)</strong></td><td style="text-align:center;"><strong>${s.outcomes.toFixed(2)}</strong></td><td style="text-align:center;">&gt; 3.00</td></tr>
+            </tbody>
+          </table>
+
+          <h2>3. Breakdown Analisis 12 Dimensi MLQ-5X</h2>
+          <table>
+            <thead>
+              <tr><th>Kode</th><th>Nama Dimensi</th><th style="text-align:center;">Skor</th><th style="text-align:center;">Target</th><th style="text-align:center;">Gap</th></tr>
+            </thead>
+            <tbody>
+              ${Object.keys(dimensionsMeta).map(code => {
+                const meta = dimensionsMeta[code];
+                const score = s.dimScores[code] || 0;
+                const gap = score - meta.target;
+                return `
+                  <tr>
+                    <td><strong>${code}</strong></td>
+                    <td>${meta.name}</td>
+                    <td style="text-align:center;">${score.toFixed(2)}</td>
+                    <td style="text-align:center;">${meta.target.toFixed(2)}</td>
+                    <td style="text-align:center;">${gap >= 0 ? '+' : ''}${gap.toFixed(2)}</td>
+                  </tr>
+                `;
+              }).join('')}
+            </tbody>
+          </table>
+
+          <h2>4. Narasi Hasil Diagnostik & Individual Development Plan (IDP)</h2>
+          <p>
+            Berdasarkan hasil asesmen MLQ-5X, <strong>${name}</strong> menampilkan profil kepemimpinan dominan pada kategori <strong>Transformasional (${s.transformational.toFixed(2)})</strong>. Gaya ini ditunjang oleh motivasi inspiratif yang kuat dan integritas tinggi.
+          </p>
+          <p>
+            <strong>Rekomendasi Pengembangan (IDP):</strong><br>
+            1. Meningkatkan stimulasi intelektual tim (IS) dengan membuka ruang bagi ide-ide penyelesaian masalah yang inovatif.<br>
+            2. Mempertahankan pendampingan personal (IC) melalui coaching 1-on-1 secara berkala.<br>
+            3. Menjaga kejelasan target KPI dan pemberian reward apresiatif (CR) yang konsisten.
+          </p>
+
+          <br><br>
+          <p style="text-align:right; font-size:9pt; color:#94a3b8;">Laporan ini dibuat otomatis oleh MLQ-5X Diagnostic Platform</p>
+        </body>
+        </html>
+      `;
+
+      const blob = new Blob(['\ufeff', htmlContent], {
+        type: 'application/msword'
+      });
+
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `Laporan_MLQ5X_${name.replace(/\s+/g, '_')}.doc`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
